@@ -1,6 +1,5 @@
 
 
-
 .hero1 {
     background-color: #820AD1,
   }
@@ -10,5 +9,10 @@
 }
 
 .ph {
-  text-align: left
+  text-align: left;
+  /* font-family: 'Consolas'; */
+}
+
+.hero3{
+  background-color: #232323;
 }

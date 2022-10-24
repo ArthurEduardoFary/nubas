@@ -3,69 +3,87 @@
 <html lang="en">
 <head>
 <!--  Load CSS in Flask with html-->
-    <link rel="stylesheet" href='/staticFiles/main.css' />
+    <link rel="stylesheet" href='styles/main.css' />
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!--  Load JavaScript in Flask with html-->
  
   </head>
-  <body style="background-color: #820AD1 !important">
-    <div class="px-4 py-5 my-5 text-center text-light hero1">
-      <h1 class="display-3 fw-bold">NUBASAAAA</h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">
-          A inovação em banco digital
+  <body class="hero3">
+    <a type="button" class="btn mx-3 mt-3 " style="background-color: #820AD1;border: none;color: white;padding: 12px 16px;font-size: 16px;cursor: pointer;" 
+    role='button' href="index.html"><i class="fa fa-home"></i></a>
+    
+    <div class="px-5 pt-5 text-center text-light hero1">
+      <h1 class="display-3 fw-bold">NOTAS DE ATUALIZAÇÃO</h1>
+    </div>
+    <div class='container-fluid py-5 hero1'>
+      <div class="container px-2 py-1 hero3">
+        <div class="row g-5 pt-5 pb-3 ">
+          <h1 class="display-5 lh-1 mb-1 text-left" style="color: #820AD1;"><strong style="color: #fff;">1.1</strong> Fly.io </h1> 
+        </div>
+        <h2 class="text-light" style="text-decoration: underline; text-decoration-color: #820AD1"> Principais Mudanças:</h2> 
+        <br>
+        <h4 class="text-light" style="padding-left: 2rem;">> Bot agora está sendo hospedado em Fly.io (anteriormente Repl.it)</h4> 
+        <p class="lead mt-1 mb-4 ph text-light" style="padding-left: 4rem;">
+          – Com o host no Fly.io o bot deverá ser mais estável e cair muito menos <br> <br>
+          – Com ip único e não compartilhado, o bot fará menos requests e assim não atingirá o limite do discord (O que desligava o bot anteriormente) <br>
+        </p>
+        
+        <h4 class="text-light" style="padding-left: 2rem;">> Rework no sistema de comandos</h4> 
+        <p class="lead mt-1 mb-4 ph text-light" style="padding-left: 4rem;">
+          – Os comandos foram re-escritos de uma forma mais correta e pythonica, com o objetivo de novamente reduzir a quantidade de requests <br>
+        </p>
+
+        <h2 class="text-light" style="text-decoration: underline; text-decoration-color: #820AD1"> Correções de bugs:</h2> 
+        <br>
+        <p class="lead mt-1 mb-4 ph text-light" style="padding-left: 4rem;">
+          – Corrigido o bug do pix reverso, onde ao fazer um pix com número negativo tirava-se dinheiro da conta do recipiente 
+          e adicionava a conta de que mfez o pix. (assalto via pix)<br> <br>
+          – Corrigido o bug de criar uma conta com número negativo. (Contas já criadas não serão afetadas)<br> <br>
+          – Corrigido um bug que deixava mais de duas contas serem abertas pela mesma pessoa.
         </p>
       </div>
-    </div>
 
-    <div class='container-fluid py-5 hero2'>
-      <div class="container col-xxl-8 px-5 py-5 hero2">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-          <div class="col-10 col-sm-8 col-lg-6">
-            <img src="https://cdn.discordapp.com/attachments/1020329878714855555/1032672075212660899/safe.png" class="d-block mx-lg-auto img-fluid" width="300" height="300" loading="lazy">
-          </div>
-          <div class="col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3">O Melhor do mercado</h1>
-            <p class="lead">O NUBAS traz a tecnologia para o seus diamantes. Longe estão os dias de guardar seus itens mais valiosos em um baú, apenas para serem discaradamente roubados por outros membros do servidor. Com o NUBAS seus diamantes estão seguros e prontos para uma transação a qualquer momento.</p>
-          </div>
+      <div class="container px-2 py-1 hero3">
+        <div class="row g-5 pt-5 pb-3 ">
+          <h1 class="display-5 lh-1 mb-1 text-left" style="color: #820AD1;"><strong style="color: #fff;">1.0</strong> Nubas </h1> 
         </div>
-      </div>
-    </div>
-
-  <body style="background-color: #820AD1 !important">
-    <div class="px-4 py-5 my-5 text-center text-light hero1">
-      <h1 class="display-3 fw-bold">1.0</h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">
-          NUBAS está em sua versão 1.0 e já possui algumas funcionalidades (como transferência de dinheiro, verificação de saldo e confirmação de transação), porém ainda há espaço para melhoras. Qualquer sugestão pode ser enviada no servidor do discord, no canal "sugestoes-nubas".
-          Clique no botão abaixo para ver as notas de atualização:
+        <h2 class="text-light" style="text-decoration: underline; text-decoration-color: #820AD1"> Implementações:</h2> 
+        <br>
+        <h4 class="text-light" style="padding-left: 2rem;">> Criação de contas:</h4>
+        <p class="lead mt-1 mb-4 ph text-light" style="padding-left: 4rem;">
+          –  Usuários podem criar contas bancárias atreladas às suas contas do discord. <br>
         </p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Notas de atualização</button>
-        </div>
-      </div>
-    </div>
+        
+        <h4 class="text-light" style="padding-left: 2rem;">> Atendimento em mensagens privadas:</h4>
+        <p class="lead mt-1 mb-4 ph text-light" style="padding-left: 4rem;">
+          – Usuários podem ultilizar os comandos do NUBAS em uma conversa privada com o bot.<br>
+        </p>
 
-    <div class='container-fluid py-5 hero2'>
-      <div class="container col-xxl-8 px-5 py-5 hero2">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-          <div class="col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3">O Melhor do mercado</h1>
-            <p class="lead">O NUBAS traz a tecnologia para o seus diamantes. Longe estão os dias de guardar seus itens mais valiosos em um baú, apenas para serem discaradamente roubados por outros membros do servidor. Com o NUBAS seus diamantes estão seguros e prontos para uma transação a qualquer momento.</p>
-          </div>
-          <div class="col-10 col-sm-8 col-lg-6">
-            <h1>teste</h1>
-          </div>
-        </div>
-      </div>
-    </div>
+        <h4 class="text-light" style="padding-left: 2rem;">> Checagem de saldo:</h4>
+        <p class="lead mt-1 mb-4 ph text-light" style="padding-left: 4rem;">
+          – Usuários podem checar o saldo de suas contas.<br>
+        </p>
+        
+        <h4 class="text-light" style="padding-left: 2rem;">> Transferências:</h4>
+        <p class="lead mt-1 mb-4 ph text-light" style="padding-left: 4rem;">
+          – Usuários podem transferir dinheiro de uma conta para outras.<br>
+        </p>
 
-  
+        <h4 class="text-light" style="padding-left: 2rem;">> Verificação de transferência:</h4>
+        <p class="lead mt-1 mb-4 ph text-light" style="padding-left: 4rem;">
+          – Parecido com um extrato, usuários podem enviar uns para os outros um código gerado em toda transferência para ser verificado, assim validando a transferência.<br>
+        </p>
+      </div>
+    
+    </div>
+    <div class="container-fluid py-5 mb-5 text-center">
+      <a type="button" class="btn btn-lg" style="background-color: #820AD1; color: #fff;" role="button" href="index.html">Voltar ao site principal</a>
+    </div>
   </body>
 </html>
