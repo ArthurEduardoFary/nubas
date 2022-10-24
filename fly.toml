@@ -1,0 +1,8 @@
+# fly.toml file generated for nubas on 2022-10-23T17:29:16-03:00
+
+app = "nubas"
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[env]
