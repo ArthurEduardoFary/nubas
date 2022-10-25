@@ -1,1 +1,79 @@
-{}
+{
+    "132": {
+        "nome": "teste do yut",
+        "owners": [
+            "01",
+            "05"
+        ],
+        "percentages": [
+            "50",
+            "50"
+        ]
+    },
+    "999": {
+        "nome": "madeira do tange",
+        "owners": [
+            "29",
+            "13"
+        ],
+        "percentages": [
+            "66.6",
+            "33.3"
+        ]
+    },
+    "123": {
+        "nome": "teste do teste",
+        "owners": [
+            "01",
+            "05"
+        ],
+        "percentages": [
+            "50",
+            "50"
+        ]
+    },
+    "122": {
+        "nome": "teste do teste",
+        "owners": [
+            "01",
+            "05"
+        ],
+        "percentages": [
+            "50",
+            "50"
+        ]
+    },
+    "105": {
+        "nome": "Yutuis livraria",
+        "owners": [
+            "01",
+            "05"
+        ],
+        "percentages": [
+            "50",
+            "50"
+        ]
+    },
+    "101": {
+        "nome": "prefeitura",
+        "owners": [
+            "77",
+            "01"
+        ],
+        "percentages": [
+            "92",
+            "08"
+        ]
+    },
+    "102": {
+        "nome": "teste de loja 1",
+        "owners": [
+            "01",
+            "00"
+        ],
+        "percentages": [
+            "90",
+            "10"
+        ]
+    }
+}

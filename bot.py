@@ -45,17 +45,25 @@ def DiscordBot():
     @client.command(help='Checa o seu saldo atual', brief='Checa seu saldo')
     async def saldo(ctx):
       await ctx.channel.send(embed = message_handler.saldo(ctx))
+
+    @client.command(help='Cria e registra o CNPJ de uma loja', brief='Cria uma loja')
+    async def loja(ctx, *args):
+      await ctx.channel.send(embed = message_handler.loja(ctx, *args))
     
     @client.command(hidden = True, help='Vai remover seu dinheiro e ninguem vai ler isso pq so o yut pode usar esse comando')
     async def rmv(ctx, arg1, arg2):
       if str(ctx.message.author) == 'yut#7995':
         await ctx.channel.send(embed = message_handler.rmv(ctx, arg1, arg2))
         
-    
     @client.command(hidden = True, help='um miojo e IMPOSIVEL ficar pronto em 3 minutos, e literalmente imposivel')
     async def add(ctx, arg1, arg2):
       if str(ctx.message.author) == 'yut#7995':
         await ctx.channel.send(embed = message_handler.add(ctx, arg1, arg2))
+
+    @client.command(hidden = True, help='Tira uma loja')
+    async def rmvstore(ctx, arg1):
+      if str(ctx.message.author) == 'yut#7995':
+        await ctx.channel.send(embed = message_handler.rmvstore(ctx, arg1))
     
     
     #ERROR HANDLERES
@@ -78,6 +86,12 @@ def DiscordBot():
         embed = discord.Embed(title=":x: Algo deu errado", description="Argumentos incorretos", color=discord.Color.purple())
         await ctx.channel.send(embed = embed)
 
+    @loja.error
+    async def loja_error(ctx, error):
+      if isinstance(error, commands.BadArgument):
+        embed = discord.Embed(title=":x: Algo deu errado", description="Argumentos incorretos", color=discord.Color.purple())
+        await ctx.channel.send(embed = embed)
+
     @add.error
     async def add_error(ctx, error):
       if isinstance(error, commands.BadArgument):
@@ -89,21 +103,5 @@ def DiscordBot():
       if isinstance(error, commands.BadArgument):
         embed = discord.Embed(title=":x: Algo deu errado", description="Argumentos incorretos", color=discord.Color.purple())
         await ctx.channel.send(embed = embed)
-        
-    #interest.main()
-    #keep_alive()
-
-    #TOKEN = os.environ.get("DISCORD_TOKEN")
-      
+          
     client.run(TOKEN)
-    # try:
-    #     client.run(TOKEN)
-    # except discord.errors.HTTPException:
-    #    # os.system('python restarter.py')
-        
-    #     client.close()
-    #     time.sleep(10)
-    #     client.connect()
- 
-    #     #print('Desligando...')
-    #     #os.system('kill 1')

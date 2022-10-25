@@ -4,6 +4,7 @@ from datetime import datetime
 import base64
 import manage
 import pytz
+from collections import OrderedDict
 
 def log(ctx):
     log_msg = str(ctx.message.author) + " said: " + str(ctx.message.content) + "(" + str(ctx.channel) + ")" + " " + str(datetime.now())
@@ -41,8 +42,8 @@ def join(ctx, arg1):
       return embed
         
     accounts[n_conta] = {"cash": 0.00, "user": user}
-    #with open('accounts.json', 'w', encoding='utf-8') as f:
-      #json.dump(accounts, f, indent=4)
+    with open('accounts.json', 'w', encoding='utf-8') as f:
+      json.dump(accounts, f, indent=4)
     
     embed = discord.Embed(title="Nu Conta criada!", description="Sua conta NUBAS foi criada com sucesso! :white_check_mark:", color=discord.Color.purple())
     embed.add_field(name="Conta: {conta}, atibuída a {usu}".format(conta=n_conta, usu=user), value='Obrigado por criar sua conta NUBAS! :purple_heart:')
@@ -62,6 +63,9 @@ def picas(ctx, arg1, arg2):
       with open('accounts.json', 'r', encoding='utf-8') as f:
           accounts = json.load(f)
 
+      with open('stores.json', 'r', encoding='utf-8') as f:
+          stores = OrderedDict(json.load(f))
+
       for key in accounts:
           if accounts[key]['user'] == user:
               account_number = key
@@ -74,12 +78,29 @@ def picas(ctx, arg1, arg2):
           embed = discord.Embed(title=":x: Algo deu errado", description="Quantidade Inválida", color=discord.Color.purple())
           return embed
       
-      if str(arg2) not in accounts:
+      if str(arg2) not in accounts and str(arg2) not in stores:
           embed = discord.Embed(title=":x: Algo deu errado", description="Conta {conta} não existe.".format(conta=arg2), color=discord.Color.purple())
           return embed
+      ##
+      
+      if str(arg2) in accounts:
+        accounts[account_number]['cash'] = float(f"{(float(accounts[account_number]['cash']) - float(arg1)):.2f}")
+        accounts[str(arg2)]['cash'] = float(f"{(float(accounts[str(arg2)]['cash']) + float(arg1)):.2f}")
 
-      accounts[account_number]['cash'] = float(f"{(float(accounts[account_number]['cash']) - float(arg1)):.2f}")
-      accounts[str(arg2)]['cash'] = float(f"{(float(accounts[str(arg2)]['cash']) + float(arg1)):.2f}")
+        
+      elif str(arg2) in stores:
+        
+        accounts[account_number]['cash'] = float(f"{(float(accounts[account_number]['cash']) - float(arg1)):.2f}")
+        
+        for i, owner in enumerate(stores[str(arg2)]['owners']):
+
+          perc = float(stores[str(arg2)]['percentages'][i])
+          print(accounts[owner]['cash'])
+          accounts[owner]['cash'] = float(f"{(float(accounts[owner]['cash']) + (float(arg1) * perc/100)):.2f}")
+          print(accounts[owner]['cash'])
+
+
+      ###
 
       with open('accounts.json', 'w', encoding='utf-8') as f:
           json.dump(accounts, f, indent=4)
@@ -113,6 +134,7 @@ def veri(ctx, arg1):
 
   with open('transfer_log.txt') as f:
       transfer_log = f.read().splitlines()
+  
 
   try:
       decoded_hash = base64.b64decode(str(arg1))
@@ -133,20 +155,53 @@ def veri(ctx, arg1):
       embed = discord.Embed(title="Transferência encontrada", description="A transferência foi encontrada nos logs do NUBAS",color=discord.Color.purple())
 
       hash_splited = decoded_hash.split(' ')
+      if len(hash_splited[1]) == 3:
+
+        with open('stores.json', 'r', encoding='utf-8') as f:
+          stores = OrderedDict(json.load(f))
+
+        hash_splited[2] = hash_splited[2] + " (" +  ", ".join((stores[hash_splited[1]]['percentages'])) + ")" 
+        hash_splited[1] = hash_splited[1] + " (" + ", ".join((stores[hash_splited[1]]['owners'])) + ")"
+        
+
+
       dados = "De: " + hash_splited[0] + "\nPara: " + hash_splited[1] + "\nValor: " + hash_splited[2] + " NUB$\nData: "+ hash_splited[3]+ " "+ hash_splited[4]+  "\n\nTransferência confirmada :white_check_mark:"
       embed.add_field(name="Dados da transferência:", value=dados)
       return embed
       
-def loja(ctx):
-    #remove .loja da msg, tira os espaços desnecessários, e separa
-    # nas barras
-    smessage = (self.p_message).replace(self.command, '').strip().split('/')
-    store_name = smessage[0].strip()
-    store_number = smessage[1].strip()
-    owners = smessage[1:]
+def loja(ctx, *args):
+    # embed = discord.Embed(title=":x: Algo deu errado", description=f"{len(args)}", color=discord.Color.purple())
+    # return embed
 
-    if len(store_number) != 3 or (int(store_number) < 100) or (int(store_number) > 999):
-      embed = discord.Embed(title=":x: Algo deu errado", description="CNPJ inválido. Insira um número positivo de 3 dígitos", color=discord.Color.purple())
+    nome_da_loja = str(args[0])
+    cnpj = int(args[1])
+    owners = []
+    percentages = []
+    
+    count = 0
+    for i,arg in enumerate(args):
+      if i >= 2:
+        if i % 2 == 0:
+          owners.append(arg)
+        else:
+          percentages.append(arg)
+
+    print(len(owners), len(percentages))
+
+    if len(owners) != len(percentages):
+      embed = discord.Embed(title=":x: Algo deu errado", description=f"Número de porcentagens não é igual ao número de donos", color=discord.Color.purple())
+      return embed
+    
+    all_percentage = 0
+    for percent in percentages:
+      all_percentage += float(percent)
+
+    if not (all_percentage >= 99 and all_percentage <= 100):
+      embed = discord.Embed(title=":x: Algo deu errado", description=f"Porcentagem inválida", color=discord.Color.purple())
+      return embed
+
+    if (cnpj < 100) or (cnpj > 999):
+      embed = discord.Embed(title=":x: Algo deu errado", description="CNPJ inválido. Insira um número positivo de 3 dígitos entre 100 e 999", color=discord.Color.purple())
       return embed
 
     with open('accounts.json', 'r', encoding='utf-8') as f:
@@ -156,13 +211,25 @@ def loja(ctx):
 
     # verifica dados dos donos
     for owner in owners:
-      account, percentage = owner.split()[0], owner.split()[1]
-      if account not in accounts:
-        embed = discord.Embed(title=":x: Algo deu errado", description=f"Conta {account} inválida.", color=discord.Color.purple())
+      if str(owner) not in accounts:
+        embed = discord.Embed(title=":x: Algo deu errado", description=f"Conta {owner} inválida.", color=discord.Color.purple())
         return embed
 
-      if overall_percentage :
-        pass
+    ### ADICIONA DADOS EM STORES.JSON
+
+    with open('stores.json', 'r', encoding='utf-8') as f:
+      stores = json.load(f)
+
+    stores[cnpj] = {'nome': nome_da_loja,'owners': (owners), 'percentages': (percentages)}
+    
+    with open('stores.json', 'w', encoding='utf-8') as f:
+      json.dump(stores, f, indent=4)
+
+    embed = discord.Embed(title=f"Loja {nome_da_loja} criada", description=f"Loja '{nome_da_loja}' criada com êxito. Dados:", color=discord.Color.purple())
+    embed.add_field(name='CNPJ:', value=f'{cnpj}')
+    embed.add_field(name='Donos:', value=f'{", ".join(owners)}')
+    embed.add_field(name='Porcentagens:', value=f'{", ".join(percentages)}')
+    return embed
     
     
 def add(ctx, arg1, arg2):
@@ -214,6 +281,22 @@ def rmv(ctx, arg1, arg2):
       embed = discord.Embed(title=f"Ocorreu um erro: {e}", description="", color=discord.Color.purple())
       return embed
 
+def rmvstore(ctx, arg1):
+  store = str(arg1)
+
+  with open('stores.json', 'r') as f:
+    stores = json.load(f)
+  if store not in stores:
+    embed = discord.Embed(title=f":x: Ocorreu um erro:", description=f"{store} not in stores.json", color=discord.Color.purple())
+    return embed
+
+  del stores[store]
+
+  with open('stores.json', 'w') as f:
+    json.dump(stores, f, indent=4)
+
+  embed = discord.Embed(title=f"Loja {store} removida", description=f"", color=discord.Color.purple())
+  return embed
 
 def saldo(ctx):
   user = str(ctx.message.author)
