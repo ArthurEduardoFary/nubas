@@ -178,7 +178,6 @@ def loja(ctx, *args):
     owners = []
     percentages = []
     
-    count = 0
     for i,arg in enumerate(args):
       if i >= 2:
         if i % 2 == 0:
@@ -219,6 +218,10 @@ def loja(ctx, *args):
 
     with open('stores.json', 'r', encoding='utf-8') as f:
       stores = json.load(f)
+
+    if str(cnpj) in stores:
+      embed = discord.Embed(title=":x: Algo deu errado", description="CNPJ já em uso.", color=discord.Color.purple())
+      return embed
 
     stores[cnpj] = {'nome': nome_da_loja,'owners': (owners), 'percentages': (percentages)}
     

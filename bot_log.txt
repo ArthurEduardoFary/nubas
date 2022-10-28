@@ -3241,6 +3241,13 @@ Tuis#6518 said: .saldo(nubas) 2022-10-23 05:24:19.406565
 Tuis#6518 said: .saldo(nubas) 2022-10-23 05:25:43.950084
 yut#7995 said: .saldo(Direct Message with Unknown User) 2022-10-23 05:26:13.309561
 yut#7995 said: .saldo(Direct Message with Unknown User) 2022-10-23 05:50:53.268640
+<<<<<<< HEAD
+JohneS#1166 said: .saldo(nubas) 2022-10-25 18:24:32.959493
+yut#7995 said: .picas 1 77(nubas) 2022-10-25 18:26:14.145877
+JohnLindo#3933 said: .join 99(nubas) 2022-10-25 18:30:12.099183
+JohnLindo#3933 said: .join 98(nubas) 2022-10-25 18:31:15.955181
+JohnLindo#3933 said: .join 99(nubas) 2022-10-25 18:31:32.979202
+=======
 yut#7995 said: .saldo(Direct Message with Unknown User) 2022-10-24 05:31:58.239881
 yut#7995 said: .add 32 01(Direct Message with Unknown User) 2022-10-24 05:33:02.359931
 yut#7995 said: .saldo(Direct Message with Unknown User) 2022-10-24 05:33:07.317129
@@ -3283,3 +3290,34 @@ Tuis#6518 said: .saldo(geral) 2022-10-25 14:57:48.328002
 JohnLindo#3933 said: .saldo(geral) 2022-10-25 14:57:50.690166
 Tuis#6518 said: .picas 100 102(geral) 2022-10-25 14:57:59.044384
 JohnLindo#3933 said: .saldo(geral) 2022-10-25 14:58:03.914269
+>>>>>>> 4baef172b0cca7823db2390457b94cde70677fbf
+JohnLindo#3933 said: .join 99(nubas) 2022-10-25 19:07:45.502859
+Pedrão#7076 said: .picas 1 337(empresas) 2022-10-25 19:16:06.956318
+Pedrão#7076 said: .saldo(nubas) 2022-10-25 20:14:32.131303
+Tuizo#5080 said: .join 50(Direct Message with Unknown User) 2022-10-26 02:55:45.001530
+Tuis#6518 said: .saldo(nubas) 2022-10-26 03:05:14.579738
+Pedrão#7076 said: .saldo(nubas) 2022-10-26 03:51:35.962693
+yut#7995 said: .add 160 05(nubas) 2022-10-26 03:54:22.461128
+Tuis#6518 said: .saldo(nubas) 2022-10-26 03:54:29.391397
+yut#7995 said: .add 282 13(nubas) 2022-10-26 03:54:56.663326
+Pedrão#7076 said: .saldo(nubas) 2022-10-26 03:55:05.227376
+yut#7995 said: .picas 30 69(Direct Message with Unknown User) 2022-10-26 03:59:05.932799
+Vini#3794 said: .saldo(Direct Message with Unknown User) 2022-10-26 19:41:37.383800
+Vini#3794 said: .picas 210 05(Direct Message with Unknown User) 2022-10-26 19:41:48.426587
+Vini#3794 said: .saldo(Direct Message with Unknown User) 2022-10-26 19:43:32.080467
+Meribe#4885 said: .saldo(Direct Message with Unknown User) 2022-10-26 22:15:42.117496
+aastriixx#2408 said: .saldo(nubas) 2022-10-26 22:16:33.666418
+aastriixx#2408 said: .picas 560 69(nubas) 2022-10-26 22:20:34.730972
+aastriixx#2408 said: .saldo(nubas) 2022-10-26 22:20:48.554397
+Tuis#6518 said: .picas 100 111(nubas) 2022-10-27 03:23:43.944083
+yut#7995 said: .add 123 05(Direct Message with Unknown User) 2022-10-27 03:31:57.767752
+yut#7995 said: .add 12 01(Direct Message with Unknown User) 2022-10-28 19:06:28.853997
+yut#7995 said: .add 65 05(Direct Message with Unknown User) 2022-10-28 19:06:33.877306
+yut#7995 said: .picas 29 182(Direct Message with Unknown User) 2022-10-28 19:06:38.324019
+yut#7995 said: .picas 12 323(Direct Message with Unknown User) 2022-10-28 19:06:44.288960
+yut#7995 said: .picas 25 13(Direct Message with Unknown User) 2022-10-28 19:06:54.208989
+yut#7995 said: .picas 36 323(Direct Message with Unknown User) 2022-10-28 19:07:03.613112
+yut#7995 said: .picas 36 323(Direct Message with Unknown User) 2022-10-28 19:07:22.099926
+yut#7995 said: .picas 29 182(Direct Message with Unknown User) 2022-10-28 19:07:33.425255
+Tuis#6518 said: .saldo(nubas) 2022-10-28 19:07:59.483522
+yut#7995 said: .rmv 100 05(Direct Message with Unknown User) 2022-10-28 19:08:40.651823

@@ -1,75 +1,57 @@
 {
-    "132": {
-        "nome": "teste do yut",
-        "owners": [
-            "01",
-            "05"
-        ],
-        "percentages": [
-            "50",
-            "50"
-        ]
-    },
-    "999": {
-        "nome": "madeira do tange",
-        "owners": [
-            "29",
-            "13"
-        ],
-        "percentages": [
-            "66.6",
-            "33.3"
-        ]
-    },
-    "123": {
-        "nome": "teste do teste",
-        "owners": [
-            "01",
-            "05"
-        ],
-        "percentages": [
-            "50",
-            "50"
-        ]
-    },
-    "122": {
-        "nome": "teste do teste",
-        "owners": [
-            "01",
-            "05"
-        ],
-        "percentages": [
-            "50",
-            "50"
-        ]
-    },
-    "105": {
+    "111": {
         "nome": "Yutuis livraria",
         "owners": [
             "01",
-            "05"
+            "05",
+            "99"
         ],
         "percentages": [
-            "50",
-            "50"
+            "45",
+            "45",
+            "10"
         ]
     },
-    "101": {
-        "nome": "prefeitura",
+    "337": {
+        "nome": "restaurante te dou uma comida",
         "owners": [
-            "77",
-            "01"
+            "13",
+            "29",
+            "99"
         ],
         "percentages": [
-            "92",
-            "08"
+            "45",
+            "45",
+            "10"
         ]
     },
-    "102": {
-        "nome": "teste de loja 1",
+    "323": {
+        "nome": "Terraplanagem Dona Francisca",
         "owners": [
-            "01",
-            "00"
+            "05",
+            "99"
+        ],
+        "percentages": [
+            "90",
+            "10"
+        ]
+    },
+    "182": {
+        "nome": "Madeireira Pau barato",
+        "owners": [
+            "05",
+            "99"
+        ],
+        "percentages": [
+            "90",
+            "10"
+        ]
+    },
+    "269": {
+        "nome": "Fogueteria",
+        "owners": [
+            "69",
+            "99"
         ],
         "percentages": [
             "90",

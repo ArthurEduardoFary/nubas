@@ -1,4 +1,4 @@
-# fly.toml file generated for nubas on 2022-10-23T17:29:16-03:00
+# fly.toml file generated for nubas on 2022-10-28T16:02:36-03:00
 
 app = "nubas"
 kill_signal = "SIGINT"
