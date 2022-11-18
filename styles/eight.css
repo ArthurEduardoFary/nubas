@@ -1,0 +1,33 @@
+
+
+.hero1 {
+    background-color: #820AD1,
+  }
+
+.hero2 {
+  background-color: #fff
+}
+
+.ph {
+  text-align: left;
+  /* font-family: 'Consolas'; */
+}
+
+.hero3{
+  background-color: #080808;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fadein{
+    animation: fadeIn 8s ease;
+}
+
+.fadeinDelayed{
+    color: #DB1616;
+    animation: fadeIn 8s ease-in-out;
+    
+}
